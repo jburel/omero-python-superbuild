@@ -27,7 +27,7 @@ pipeline {
                     cd ..
                     # Workaround for "unflattened" file, possibly due to matrix
                     find . -name version.properties -exec cp {} . \\;
-
+                    pip3.11 install setuptools
                     test -e version.properties
                     # First download of omero-blitz happens here
                     export VERSION_PROPERTIES=${env.WORKSPACE}/version.properties
