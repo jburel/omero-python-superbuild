@@ -44,7 +44,7 @@ pipeline {
                     # VERSION will be in omero-py/setup.py
                     export ZIP_FILE=${env.WORKSPACE}/omero-blitz-VERSION-python.zip
                     git submodule update --init --recursive
-                    git submodule foreach python3 -m build
+                    git submodule foreach python3.11 -m build
                 """
                 archiveArtifacts artifacts: '*/dist/*tar.gz'
             }
